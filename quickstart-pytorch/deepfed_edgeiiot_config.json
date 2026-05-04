@@ -1,0 +1,65 @@
+{
+  "model": {
+    "sequence_length": 42,
+    "num_features": 1,
+    "gru_units": 32,
+    "cnn_filters": [
+      16,
+      32
+    ],
+    "num_classes": 2
+  },
+  "fl": {
+    "num_clients": 3,
+    "num_rounds": 5,
+    "local_epochs": 2,
+    "batch_size": 256,
+    "learning_rate": 0.001
+  },
+  "data": {
+    "max_samples": 100000,
+    "total_processed": 100000,
+    "num_features_after_preprocessing": 42,
+    "drop_cols": [
+      "frame.time",
+      "ip.src_host",
+      "ip.dst_host",
+      "arp.src.proto_ipv4",
+      "arp.dst.proto_ipv4",
+      "http.file_data",
+      "http.request.full_uri",
+      "icmp.transmit_timestamp",
+      "http.request.uri.query",
+      "tcp.options",
+      "tcp.payload",
+      "tcp.srcport",
+      "tcp.dstport",
+      "udp.port",
+      "mqtt.msg",
+      "dns.qry.name.len",
+      "mqtt.conack.flags",
+      "mqtt.protoname",
+      "mqtt.topic"
+    ]
+  },
+  "results": {
+    "final_accuracy": 0.9878506074696265,
+    "best_accuracy": 0.9882505874706264,
+    "history": {
+      "train_loss": [
+        0.18495609320049722,
+        0.07797312616769757,
+        0.06748611986016234,
+        0.0612256884308798,
+        0.057397751211528736
+      ],
+      "eval_acc": [
+        0.9820508974551272,
+        0.9881505924703765,
+        0.9882505874706264,
+        0.9877506124693766,
+        0.9878506074696265
+      ]
+    }
+  }
+}

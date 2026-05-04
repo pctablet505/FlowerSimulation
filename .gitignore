@@ -1,1 +1,16 @@
-venv
+# Dataset files
+data/raw/*.csv
+data/raw/*.zip
+data/processed/
+
+# Model artifacts
+*.pt
+*.pth
+
+# Notebook outputs
+*.png
+notebook_run_output.txt
+
+# Python cache
+__pycache__/
+*.pyc
